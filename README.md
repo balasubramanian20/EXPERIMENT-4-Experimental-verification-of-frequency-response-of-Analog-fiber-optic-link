@@ -22,6 +22,13 @@ Fiber optic links can be used for transmission of digital as well as analog sign
 - **Transmitter**: Converts the electrical input signal into optical (light) energy.
 - **Optical Fiber**: Serves as the transmission medium for the light signal.
 - **Receiver**: Converts the received light back into an electrical signal, preserving the original signal pattern.
+- <img width="461" height="187" alt="image" src="https://github.com/user-attachments/assets/a7e2198d-b620-4de2-921f-52706c11e17a" />
+<img width="438" height="187" alt="image" src="https://github.com/user-attachments/assets/050900b6-ccc6-4809-be8e-f20bf577d599" />
+
+<img width="476" height="193" alt="image" src="https://github.com/user-attachments/assets/ffacd889-d32b-433c-b151-b2b3cc27767b" />
+
+
+- 
 
 ---
 
