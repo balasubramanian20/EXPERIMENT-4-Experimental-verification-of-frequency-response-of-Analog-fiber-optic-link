@@ -18,14 +18,15 @@ To analyze the relationship between input and received signal of a 660nm fiber o
 
 ## THEORY
 
-Fiber optic links can be used for transmission of digital as well as analog signals. A fiber optic link typically consists of three main elements:
-- **Transmitter**: Converts the electrical input signal into optical (light) energy.
-- **Optical Fiber**: Serves as the transmission medium for the light signal.
-- **Receiver**: Converts the received light back into an electrical signal, preserving the original signal pattern.
-- <img width="461" height="187" alt="image" src="https://github.com/user-attachments/assets/a7e2198d-b620-4de2-921f-52706c11e17a" />
-<img width="438" height="187" alt="image" src="https://github.com/user-attachments/assets/050900b6-ccc6-4809-be8e-f20bf577d599" />
+Fiber optic links can be used for transmission of digital as well as analog signals. Basically a fiber optic link contains three main elements, a transmitter, an optical fiber and a receiver. The transmitter module takes the input signal in electrical form and then transforms it into optical (light) energy containing the same information. The optical fiber is the medium which takes the energy to the receiver. At the receiver light is converted back into electrical form with the same pattern as originally fed to the transmitter.
 
-<img width="476" height="193" alt="image" src="https://github.com/user-attachments/assets/ffacd889-d32b-433c-b151-b2b3cc27767b" />
+TRANSMITTER: Fiber Optic transmitters are typically composed of a buffer, driver and Optical Source. The buffer electronics provides both an electrical connection and isolation between the transmitter and the electrical system supplying the data. The driver electronics provides electrical power to the Optical source in a fashion that duplicates the pattern of data being fed to the transmitter. Finally the optical source (LED) converts the electrical current to light energy with the same pattern. The LED SFH450V (950nm) supplied with this kit operates outside the visible light spectrum. Its Optical output is centered at near infrared wavelength of 950nm. The LED SFH756V (660nm) supplied with this kit operates at the visible light spectrum. Its Optical output is centered at wavelength of 660nm.
+
+RECEIVER: The function of the receiver is to convert the optical energy into electrical form, which is then conditioned to reproduce the transmitted electrical signal in it's original form. The detector SFH350V (Photo Transistor Detector) used in the kit has a transistor type output. The parameters usually considered in the case of detector are it's responsivity at peak wavelength and response time. SFH350V (Photo Transistor Detector) has responsivity of about 0.8mA/10uW at 660nm. But its response time is quite large and thus has lower bandwidth of about 300 KHz. When optical signal falls on the base of the transistor detector, proportional
+
+current flows through its emitter generating the voltage across the resistance connected between emitter and ground. This voltage is the duplication of the transmitted electrical signal, which can be amplified.
+
+
 
 
 - 
@@ -34,19 +35,52 @@ Fiber optic links can be used for transmission of digital as well as analog sign
 
 ## PROCEDURE
 
-1. Connect the power supply to the board.  
-2. Ensure that all switched faults are set to ‘Off’.  
-3. Make the following connections (as shown in Figure 19):  
-   a. Connect the 1KHz sine wave output to emitter 1's input.  
-   b. Connect the fiber optic cable between emitter output and detector input.  
-   c. Connect detector 1's output to AC amplifier 1 input.  
-4. On the board, switch emitter 1's driver to analog mode.  
-5. Switch on the power.  
-6. Observe the input to emitter 1 (TP5) and the output from AC amplifier 1 (TP28). Verify that both signals are identical.  
-7. Vary the frequency between 10 Hz to 1 MHz and observe the output voltage for a constant input voltage of 5V.  
-8. Calculate the bandwidth by determining the gain in decibels (dB).  
+Refer to the block diagram & carry out the following connections and settings.
 
----
+Connect the power supply with proper polarity to the kit link-B and switch it on.
+
+Keep all Switch Faults in OFF position.
+
+Keep switch SW8 towards TX position.
+
+Keep switch SW9 towards TX1 position.
+
+Keep Jumper JP5 towards +12V position.
+
+Keep Jumpers JP6, JP9, JP10 shorted.
+
+Keep Jumper JP8 towards sine position.
+
+Keep Intensity control pot P2 towards minimum position.
+
+Feed about 2Vpp sinusoidal signal of 1 KHz from the function generator to the IN post of Analog Buffer.
+
+<img width="685" height="292" alt="image" src="https://github.com/user-attachments/assets/e4b6d28a-e49d-4fed-b67b-b61280d51181" />
+
+Connect the output post OUT of Analog Buffer to the post TX IN of Transmitter.
+
+Slightly unscrew the cap of SFH756V (660nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
+
+Connect the other end of the Fiber to detector SFH350V (Photo Transistor Detector) very carefully.
+
+Observe the detected signal at post ANALOG OUT on oscilloscope. Adjust Intensity control pot P2 Optical Power control potentiometer so that you receive signal of 2Vpp amplitude.
+
+<img width="721" height="292" alt="image" src="https://github.com/user-attachments/assets/5558ff51-60e5-47c4-a2dc-1cc759a2a8f9" />
+
+To measure the analog bandwidths of the phototransistor vary the input signal frequency and observe the detected signal at various frequencies.
+
+Plot the detected signal against applied signal frequency and from the plot determine the 3dB down frequency.
+
+Keep switch SW9 towards TX2 position.
+
+Keep Jumper JP7 towards +12V position.
+
+Remove fiber cable from SFH756V (660nm) and slightly unscrew the cap of SFH450V (950nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
+
+Observe the detected signal at post ANALOG OUT on oscilloscope.
+
+<img width="743" height="301" alt="image" src="https://github.com/user-attachments/assets/243c9d28-7cfb-4314-82c0-36817ea8702b" />
+
 
 ## BLOCK DIAGRAM
 
@@ -91,7 +125,8 @@ Fiber optic links can be used for transmission of digital as well as analog sign
 
 ---
 ## graph
-![WhatsApp Image 2025-11-16 at 6 27 19 PM](https://github.com/user-attachments/assets/e80d271e-2e8e-4528-8a58-23561f3e7143)
+<img width="1500" height="1228" alt="image" src="https://github.com/user-attachments/assets/344d656d-fa50-4bcf-ae31-d5bece04e579" />
+
 
 
 ## RESULT
